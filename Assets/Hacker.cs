@@ -84,12 +84,22 @@ public class Hacker : MonoBehaviour
 
     void CheckPassword(string input){
         if (input == password){
-            Terminal.WriteLine("success");
+            DisplayWinScreen();
         }
         else{
             Terminal.WriteLine("wrong, try again");
         }
 
+    }
+
+    void DisplayWinScreen(){
+        currentScreen =  Screen.Win;
+        Terminal.ClearScreen();
+        ShowLevelReward();
+    }
+
+    void ShowLevelReward(){
+        Terminal.WriteLine("SUCCESS!");
     }
     // Update is called once per frame
     void Update()
